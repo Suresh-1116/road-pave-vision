@@ -1,10 +1,10 @@
-# 🛣️ Road Pave Vision
+#  Road Pave Vision
  
 A CNN-based road pavement detection system using **MobileNetV2 Transfer Learning** that classifies road images as **Good**, **Cracked**, or **Pothole** with **93.75% accuracy**.
  
 ---
  
-## 📸 Demo
+##  Demo
 
 ### Good Road
 ![Good Road](https://github.com/user-attachments/assets/bc3a6a9a-bc3f-425e-8100-6f269c72852e)
@@ -17,17 +17,17 @@ A CNN-based road pavement detection system using **MobileNetV2 Transfer Learning
  
 ---
  
-## 🚀 Features
+##  Features
  
-- ✅ Real-time road condition detection from images
-- ✅ Classifies roads as **Good**, **Cracked**, or **Pothole**
-- ✅ Built with **MobileNetV2 Transfer Learning** for high accuracy
-- ✅ Interactive **GUI** built with Tkinter
-- ✅ Achieved **93.75% accuracy** on test dataset
-- ✅ Supports any road image as input
+-  Real-time road condition detection from images
+-  Classifies roads as **Good**, **Cracked**, or **Pothole**
+-  Built with **MobileNetV2 Transfer Learning** for high accuracy
+-  Interactive **GUI** built with Tkinter
+-  Achieved **93.75% accuracy** on test dataset
+-  Supports any road image as input
 ---
  
-## 🛠️ Tech Stack
+##  Tech Stack
  
 | Technology | Purpose |
 |---|---|
@@ -41,7 +41,7 @@ A CNN-based road pavement detection system using **MobileNetV2 Transfer Learning
  
 ---
  
-## 📁 Project Structure
+##  Project Structure
  
 ```
 road-pave-vision/
@@ -75,34 +75,34 @@ road-pave-vision/
  
 ---
  
-## ⚙️ Installation & Setup
+##  Installation & Setup
  
-### 1️⃣ Clone the Repository
+### 1 Clone the Repository
 ```bash
 git clone https://github.com/Suresh-1116/road-pave-vision.git
 cd road-pave-vision
 ```
  
-### 2️⃣ Create Virtual Environment
+### 2️ Create Virtual Environment
 ```bash
 python -m venv venv
 venv\Scripts\activate  # Windows
 source venv/bin/activate  # Mac/Linux
 ```
  
-### 3️⃣ Install Dependencies
+### 3️ Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
  
-### 4️⃣ Run the Demo
+### 4️ Run the Demo
 ```bash
 python demo.py
 ```
  
 ---
  
-## 🏋️ Training the Model
+##  Training the Model
  
 If you want to retrain the model on your own dataset:
  
@@ -115,7 +115,7 @@ Training uses **two phases:**
 - **Phase 2** — Fine-tune last 30 layers of MobileNetV2 (20 epochs)
 ---
  
-## 📊 Model Performance
+##  Model Performance
  
 | Metric | Value |
 |---|---|
@@ -128,7 +128,7 @@ Training uses **two phases:**
  
 ---
  
-## 🧠 Model Architecture
+##  Model Architecture
  
 ```
 MobileNetV2 (pretrained on ImageNet)
@@ -148,7 +148,7 @@ Dense(3, softmax) → [Cracked, Good, Pothole]
  
 ---
  
-## 📦 Requirements
+##  Requirements
  
 ```
 tensorflow
@@ -165,22 +165,22 @@ pip install -r requirements.txt
  
 ---
  
-## 👨‍💻 Author
+##  Author
  
 **V Suresh Kumar**
-- 🎓 B.Tech CSE — Sri Venkateswara College of Engineering, Tirupati
-- 💼 [LinkedIn](https://www.linkedin.com/in/suresh-kumar-43a458255/)
-- 🐙 [GitHub](https://github.com/Suresh-1116)
+-  B.Tech CSE — Sri Venkateswara College of Engineering, Tirupati
+-  [LinkedIn](https://www.linkedin.com/in/suresh-kumar-43a458255/)
+-  [GitHub](https://github.com/Suresh-1116)
 
 ---
  
-## 📄 License
+##  License
  
 This project is open source and available under the [MIT License](LICENSE).
  
 ---
  
-⭐ If you found this project helpful, please give it a star!
+ If you found this project helpful, please give it a star!
 
  
  
