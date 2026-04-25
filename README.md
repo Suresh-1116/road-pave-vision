@@ -164,7 +164,11 @@ pip install -r requirements.txt
  
 **V Suresh Kumar**
 - 🎓 B.Tech CSE — Sri Venkateswara College of Engineering, Tirupati
+<<<<<<< HEAD
 - 💼 [LinkedIn](https://www.linkedin.com/in/suresh-kumar-43a458255/)
+=======
+- 💼 [LinkedIn](https://www.linkedin.com/in/your-linkedin)
+>>>>>>> 8d3084f169f6431b743559e816ffd6cc83b12bdb
 - 🐙 [GitHub](https://github.com/Suresh-1116)
 ---
  
@@ -175,4 +179,8 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
  
 ⭐ If you found this project helpful, please give it a star!
+<<<<<<< HEAD
  
+=======
+ 
+>>>>>>> 8d3084f169f6431b743559e816ffd6cc83b12bdb
