@@ -1,37 +1,55 @@
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
 # Dataset paths
 train_dir = "dataset/train"
 val_dir = "dataset/val"
 test_dir = "dataset/test"
+
 # Image settings
 IMG_HEIGHT = 224
 IMG_WIDTH = 224
-BATCH_SIZE = 32
-# Preprocessing
-train_datagen = ImageDataGenerator(rescale=1./255)
+BATCH_SIZE = 16
+
+# Heavy augmentation for small dataset
+train_datagen = ImageDataGenerator(
+    rescale=1./255,
+    rotation_range=30,
+    width_shift_range=0.3,
+    height_shift_range=0.3,
+    horizontal_flip=True,
+    vertical_flip=False,
+    zoom_range=0.3,
+    shear_range=0.2,
+    brightness_range=[0.8, 1.2],
+    fill_mode='nearest'
+)
+
 val_datagen = ImageDataGenerator(rescale=1./255)
 test_datagen = ImageDataGenerator(rescale=1./255)
+
 # Load datasets
 train_data = train_datagen.flow_from_directory(
-train_dir,
-target_size=(IMG_HEIGHT, IMG_WIDTH),
-batch_size=BATCH_SIZE,
-class_mode="categorical"
+    train_dir,
+    target_size=(IMG_HEIGHT, IMG_WIDTH),
+    batch_size=BATCH_SIZE,
+    class_mode="categorical"
 )
+
 val_data = val_datagen.flow_from_directory(
-val_dir,
-target_size=(IMG_HEIGHT, IMG_WIDTH),
-batch_size=BATCH_SIZE,
-class_mode="categorical"
+    val_dir,
+    target_size=(IMG_HEIGHT, IMG_WIDTH),
+    batch_size=BATCH_SIZE,
+    class_mode="categorical"
 )
+
 test_data = test_datagen.flow_from_directory(
-test_dir,
-target_size=(IMG_HEIGHT, IMG_WIDTH),
-batch_size=BATCH_SIZE,
-class_mode="categorical",
-shuffle=False
+    test_dir,
+    target_size=(IMG_HEIGHT, IMG_WIDTH),
+    batch_size=BATCH_SIZE,
+    class_mode="categorical",
+    shuffle=False
 )
-print("✅ Dataset preprocessing complete"
-)
+
+print("✅ Dataset preprocessing complete")
 print("Classes:", train_data.class_indices)

@@ -1,16 +1,34 @@
 import tensorflow as tf
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
-def build_cnn(input_shape=(224,224,3), num_classes=3):
-    model = Sequential([
-        Conv2D(32, (3,3), activation='relu', input_shape=input_shape),
-        MaxPooling2D(2,2),
-        Conv2D(64, (3,3), activation='relu'),
-        MaxPooling2D(2,2),
-        Flatten(),
-        Dense(128, activation='relu'),
-        Dropout(0.5),
-        Dense(num_classes, activation='softmax')
-    ])
-    model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
-    return model
+from tensorflow.keras.applications import MobileNetV2
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import Dense, Dropout, GlobalAveragePooling2D
+
+def build_transfer_model(input_shape=(224,224,3), num_classes=3):
+    # Load MobileNetV2 pretrained on ImageNet
+    base_model = MobileNetV2(
+        input_shape=input_shape,
+        include_top=False,
+        weights='imagenet'
+    )
+
+    # Freeze base model layers
+    base_model.trainable = False
+
+    # Add custom layers on top
+    x = base_model.output
+    x = GlobalAveragePooling2D()(x)
+    x = Dense(256, activation='relu')(x)
+    x = Dropout(0.5)(x)
+    x = Dense(128, activation='relu')(x)
+    x = Dropout(0.3)(x)
+    output = Dense(num_classes, activation='softmax')(x)
+
+    model = Model(inputs=base_model.input, outputs=output)
+
+    model.compile(
+        optimizer=tf.keras.optimizers.Adam(learning_rate=0.0001),
+        loss='categorical_crossentropy',
+        metrics=['accuracy']
+    )
+
+    return model, base_model

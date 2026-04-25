@@ -6,7 +6,7 @@ import numpy as np
 import tensorflow as tf
 # Load model
 model = tf.keras.models.load_model("saved_models/road_pavement_model.h5")
-classes = ["good", "cracked", "pothole"]
+classes = ["cracked", "good", "pothole"]
 # Function to upload and predict
 def upload_and_predict():
     file_path = filedialog.askopenfilename()
