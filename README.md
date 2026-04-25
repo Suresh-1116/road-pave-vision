@@ -5,13 +5,15 @@ A CNN-based road pavement detection system using **MobileNetV2 Transfer Learning
 ---
  
 ## 📸 Demo
- 
-| Good Road | Cracked Road | Pothole |
-|---|---|---|
-| ![Good](<img width="1919" height="1015" alt="Screenshot 2026-04-25 202303" src="https://github.com/user-attachments/assets/bc3a6a9a-bc3f-425e-8100-6f269c72852e" />
-) | ![Cracked](<img width="1919" height="1019" alt="Screenshot 2026-04-25 202238" src="https://github.com/user-attachments/assets/1bf25064-5214-44ad-a37f-c8bee710f1b1" />
-) | ![Pothole](<img width="1918" height="1017" alt="Screenshot 2026-04-25 202213" src="https://github.com/user-attachments/assets/626a9549-0b57-4b7a-8455-38fb1cdc5657" />
-) |
+
+### Good Road
+![Good Road](https://github.com/user-attachments/assets/bc3a6a9a-bc3f-425e-8100-6f269c72852e)
+
+### Cracked Road
+![Cracked Road](https://github.com/user-attachments/assets/1bf25064-5214-44ad-a37f-c8bee710f1b1)
+
+### Pothole
+![Pothole](https://github.com/user-attachments/assets/626a9549-0b57-4b7a-8455-38fb1cdc5657)
  
 ---
  
